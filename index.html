@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#050807">
+  <meta name="description" content="Personal portfolio — Biomedical Engineering, Machine Learning, and Computer Vision.">
+  <title>Web portfolio</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/matrix.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <canvas id="matrix-canvas" aria-hidden="true"></canvas>
+  <div class="matrix-vignette" aria-hidden="true"></div>
+
+  <main class="stage" aria-live="polite">
+    <!-- Welcome screen: shown first, then transitions automatically to Home. -->
+    <section id="welcome-screen" class="welcome-screen" aria-label="Welcome">
+      <div class="welcome-line">
+        <span id="welcome-text"></span><span class="cursor" aria-hidden="true"></span>
+      </div>
+      <p class="welcome-subtitle">INITIALIZING PORTFOLIO INTERFACE<span class="loading-dots"></span></p>
+      <div class="welcome-progress" aria-hidden="true"><span id="welcome-progress-bar"></span></div>
+    </section>
+
+    <!-- Home terminal -->
+    <section id="home-screen" class="terminal home-terminal is-hidden" aria-label="Portfolio home">
+      <div class="terminal-topbar">
+        <div class="window-controls" aria-hidden="true"><i></i><i></i><i></i></div>
+        <span class="terminal-title">guest@portfolio: ~</span>
+        <span class="topbar-status"><span class="status-dot"></span> ONLINE</span>
+      </div>
+
+      <div class="terminal-body home-body">
+        <div class="system-label">PERSONAL PORTFOLIO <span>v1.0.0</span></div>
+        <p class="muted">Hi! My name is</p>
+        <h1 class="name">[name]</h1>
+        <p class="intro">
+          I am a Biomedical Engineering graduate with a strong interest in
+          Research &amp; Development, Machine Learning, and Computer Vision.
+        </p>
+
+        <div class="rule"><span>AVAILABLE COMMANDS</span></div>
+        <p class="hint">Type a command below or select a menu item.</p>
+        <nav class="command-menu" aria-label="Portfolio sections">
+          <button class="command-link" type="button" data-command="about">about</button>
+          <button class="command-link" type="button" data-command="experience">experience</button>
+          <button class="command-link" type="button" data-command="projects">projects</button>
+          <button class="command-link" type="button" data-command="skills">skills</button>
+        </nav>
+
+        <div id="terminal-output" class="terminal-output" aria-live="polite">
+          <p class="output-line"><span class="prompt">guest&gt;</span> Type <span class="accent">help</span> to see available commands.</p>
+        </div>
+
+        <form id="command-form" class="command-form" autocomplete="off">
+          <label class="prompt" for="command-input">guest&gt;</label>
+          <input id="command-input" name="command" type="text" spellcheck="false"
+            autocapitalize="off" placeholder="type a command..." aria-label="Type a portfolio command">
+          <button type="submit" class="run-button" aria-label="Run command">↵</button>
+        </form>
+        <p class="footer-note">TIP: Press <kbd>Enter</kbd> to execute a command.</p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
+

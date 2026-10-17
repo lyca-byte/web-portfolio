@@ -1,0 +1,103 @@
+/* Experience-specific content. Shared navigation, headings, cards, footer,
+   and image-carousel styles are defined in css/components.css. */
+
+.experience-body {
+  padding-bottom: 24px;
+}
+
+.experience-section-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 12px 0;
+  border-top: 1px solid rgba(32, 178, 170, 0.25);
+  border-bottom: 1px solid rgba(32, 178, 170, 0.25);
+  color: var(--teal);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+}
+
+#experience-count {
+  color: var(--muted);
+}
+
+.experience-list {
+  min-width: 0;
+}
+
+.content-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.experience-organization {
+  margin: 0 0 8px;
+  color: var(--teal);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.experience-period {
+  margin: 0 0 16px;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.experience-description {
+  margin: 0;
+  color: #d0dfd9;
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.content-card-list {
+  margin: 12px 0 0;
+  padding-left: 19px;
+  color: #d0dfd9;
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+.content-card-list li {
+  margin: 5px 0;
+}
+
+.experience-type {
+  flex-shrink: 0;
+  padding: 5px 8px;
+  border: 1px solid rgba(32, 178, 170, 0.28);
+  border-radius: 4px;
+  color: var(--teal);
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.experience-loading,
+.experience-empty,
+.experience-error {
+  padding: 18px 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.experience-error {
+  color: #ff9b9b;
+}
+
+@media (max-width: 600px) {
+  .content-card-header {
+    flex-direction: column;
+    gap: 6px;
+  }
+}
+
+.content-card-header .content-card-title {
+  margin-bottom: 9px;
+  font-size: 16px;
+}

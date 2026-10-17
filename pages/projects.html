@@ -1,0 +1,119 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#050807">
+
+  <meta
+    name="description"
+    content="Machine learning, computer vision, data analysis, and software development projects."
+  >
+
+  <title>Projects | darla's portfolio</title>
+
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/projects.css">
+
+  <script src="../js/matrix.js" defer></script>
+  <script src="../js/projects.js" defer></script>
+</head>
+
+<body>
+  <!-- Shared Matrix background -->
+  <canvas id="matrix-canvas" aria-hidden="true"></canvas>
+  <div class="matrix-vignette" aria-hidden="true"></div>
+
+  <main class="stage">
+    <section
+      class="terminal projects-terminal"
+      aria-label="Projects"
+    >
+      <!-- Terminal title bar: same structure as Experience -->
+      <div class="terminal-topbar">
+        <div class="window-controls" aria-hidden="true">
+          <i></i><i></i><i></i>
+        </div>
+
+        <span class="terminal-title">
+          guest@portfolio: ~/projects
+        </span>
+
+        <span class="topbar-status">
+          <span class="status-dot"></span> ONLINE
+        </span>
+      </div>
+
+      <!-- Scrollable page content -->
+      <div class="terminal-body projects-body">
+
+        <!-- Shared page navigation -->
+        <nav
+          class="page-navigation"
+          aria-label="Page navigation"
+        >
+          <a
+            class="back-button"
+            href="../index.html?skipWelcome=1"
+          >
+            <span aria-hidden="true">←</span>
+            Back to Home
+          </a>
+
+          <span class="current-path">~/projects</span>
+        </nav>
+
+        <!-- Shared portfolio label -->
+        <div class="system-label">
+          PERSONAL PORTFOLIO <span>PROJECTS</span>
+        </div>
+
+        <!-- Page heading -->
+        <header class="page-header">
+          <h1 class="page-title">
+            Projects &amp; <span class="accent">Portfolio</span>
+          </h1>
+
+          <p class="page-intro">
+            A selection of my projects involving machine learning,
+            computer vision, data analysis, and software development.
+          </p>
+        </header>
+
+        <!-- Project list -->
+        <section aria-label="Project portfolio">
+          <div class="projects-section-label">
+            <span>PROJECTS_LOG</span>
+            <span id="project-count">LOADING...</span>
+          </div>
+
+          <div
+            id="projects-list"
+            class="projects-list"
+            aria-live="polite"
+          >
+            <p class="projects-loading">
+              Loading projects...
+            </p>
+          </div>
+        </section>
+
+        <!-- Shared page footer -->
+        <footer class="page-footer">
+          <span class="footer-note">END OF PROJECTS.LOG</span>
+
+          <a
+            class="footer-link"
+            href="../index.html?skipWelcome=1"
+          >
+            Return home ↵
+          </a>
+        </footer>
+
+      </div>
+    </section>
+  </main>
+</body>
+</html>

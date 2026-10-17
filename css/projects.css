@@ -1,0 +1,228 @@
+
+/* =========================================
+   PROJECTS PAGE
+   Shared styles are defined in style.css
+   and components.css.
+   ========================================= */
+
+/* Page content inside the shared terminal panel */
+
+.projects-body {
+  padding-bottom: 24px;
+}
+
+/* Project section label
+   Follows the visual style of the Experience section label. */
+
+.projects-section-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 12px 0;
+  border-top: 1px solid rgba(32, 178, 170, 0.25);
+  border-bottom: 1px solid rgba(32, 178, 170, 0.25);
+  color: var(--teal);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+}
+
+#project-count {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+/* Project list */
+
+.projects-list {
+  min-width: 0;
+}
+
+/* Project card
+   The card's border, background, and padding come from
+   the shared .content-card component. */
+
+.project-card {
+  min-width: 0;
+}
+
+.project-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 12px;
+}
+
+.project-card-heading {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+/* Project category */
+
+.project-category {
+  display: inline-block;
+  margin-bottom: 8px;
+  padding: 5px 8px;
+  border: 1px solid rgba(32, 178, 170, 0.28);
+  border-radius: 4px;
+  color: var(--teal);
+  font-size: 10px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+/* Project title uses the shared .content-card-title class. */
+
+.project-card .content-card-title {
+  margin: 0 0 9px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+/* Project period */
+
+.project-period {
+  flex-shrink: 0;
+  margin: 2px 0 0;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+/* Description */
+
+.project-description {
+  margin: 0;
+  color: #d0dfd9;
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+/* Image carousel
+   .image-carousel, .carousel-heading, .carousel-counter,
+   .carousel-viewport, .preview-image, .carousel-controls,
+   .carousel-button, and .carousel-hint are shared components.
+   Their styling stays in components.css. */
+
+.project-card .image-carousel {
+  min-width: 0;
+}
+
+/* Technologies */
+
+.project-subheading {
+  margin: 16px 0 9px;
+  color: var(--teal);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.7;
+}
+
+.project-tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.project-tech-tag {
+  display: inline-block;
+  max-width: 100%;
+  padding: 6px 10px;
+  border: 1px solid rgba(32, 178, 170, 0.3);
+  border-radius: 4px;
+  background: rgba(32, 178, 170, 0.06);
+  color: var(--teal);
+  font-size: 11px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+/* Project links */
+
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px dashed rgba(32, 178, 170, 0.2);
+}
+
+.project-link {
+  color: var(--teal);
+  font-family: var(--mono);
+  font-size: 11px;
+  line-height: 1.7;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+  transition: color 0.18s ease;
+}
+
+.project-link::before {
+  content: "./ ";
+  color: var(--subtle);
+}
+
+.project-link:hover,
+.project-link:focus-visible {
+  color: var(--green);
+  text-decoration: underline;
+  outline: none;
+}
+
+/* Loading, empty, and error states */
+
+.project-empty,
+.projects-loading,
+.project-error {
+  margin: 0;
+  padding: 18px 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.project-error {
+  color: #ff9b9b;
+}
+
+/* Responsive layout */
+
+@media (max-width: 600px) {
+  .project-card-header {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .project-period {
+    align-self: flex-start;
+    margin-top: 0;
+  }
+
+  .project-card .content-card-title {
+    font-size: 15px;
+  }
+
+  .project-tech-list {
+    gap: 7px;
+  }
+
+  .project-links {
+    gap: 12px;
+  }
+}
+
+/* Reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+  .project-link {
+    transition: none;
+  }
+}

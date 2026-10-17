@@ -1,0 +1,124 @@
+/* About-specific content styles */
+.about-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.about-description {
+  min-width: 0;
+  color: #d0dfd9;
+  line-height: 1.9;
+}
+
+.about-description p {
+  margin: 0 0 14px;
+}
+
+.about-description p:last-child {
+  margin-bottom: 0;
+}
+
+.about-greeting {
+  color: var(--teal);
+  font-weight: 500;
+}
+
+/* Optional profile image */
+.profile-photo-wrapper {
+  display: none;
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  border: 2px solid var(--teal);
+  border-radius: 50%;
+  background: rgba(32, 178, 170, 0.06);
+  box-shadow: 0 0 24px rgba(32, 178, 170, 0.12);
+}
+
+.profile-photo-wrapper.visible {
+  display: block;
+}
+
+.profile-photo-wrapper img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.detail-row {
+  display: grid;
+  grid-template-columns: minmax(100px, 145px) minmax(0, 1fr);
+  gap: 14px;
+  padding: 9px 0;
+  border-bottom: 1px dashed rgba(32, 178, 170, 0.15);
+  overflow-wrap: anywhere;
+}
+
+.detail-row:last-child {
+  border-bottom: none;
+}
+
+.detail-label {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+/* Areas of interest */
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.skill-tag {
+  display: inline-block;
+  padding: 6px 10px;
+  border: 1px solid rgba(32, 178, 170, 0.3);
+  border-radius: 4px;
+  background: rgba(32, 178, 170, 0.06);
+  color: var(--teal);
+  font-size: 11px;
+}
+
+/* Contact information */
+.contact-list p {
+  display: grid;
+  grid-template-columns: minmax(90px, 110px) minmax(0, 1fr);
+  gap: 12px;
+  margin: 12px 0;
+  overflow-wrap: anywhere;
+}
+
+.contact-list a {
+  color: var(--teal);
+  text-decoration: none;
+}
+
+.contact-list a:hover {
+  text-decoration: underline;
+}
+
+/* Wider screens: place photo beside the introduction */
+@media (min-width: 620px) {
+  .about-intro:has(.profile-photo-wrapper.visible) {
+    grid-template-columns: 150px minmax(0, 1fr);
+    align-items: start;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .detail-row {
+    grid-template-columns: 1fr;
+    gap: 3px;
+  }
+
+  .contact-list p {
+    grid-template-columns: 1fr;
+    gap: 3px;
+  }
+
+}
