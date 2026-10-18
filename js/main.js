@@ -60,7 +60,7 @@
     skills: "Opening skills page...",
     gallery: "Opening gallery page",
     help:
-      "Available commands: about, experience, projects, skills, help, clear, home.",
+      "Available commands: about, experience, projects, skills, gallery, help, clear, home.",
     home: "You are already on the home page.",
     clear: ""
   };
