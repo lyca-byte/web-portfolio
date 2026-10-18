@@ -312,6 +312,12 @@
       return;
     }
 
+    // Navigate to Skills.
+    if (command === "skills"){
+      window.location.href="pages/skills.html";
+      return;
+    }
+
     // Keep the user on the current home page.
     if (command === "home") {
       addOutput(command, commands.home);
