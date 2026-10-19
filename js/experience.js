@@ -29,11 +29,7 @@
         "Implemented features for image visualization and analysis.",
         "Evaluated different approaches to improve application functionality and usability."
       ],
-      images: [
-        "../assets/images/experience/software-engineer-1.png",
-        "../assets/images/experience/software-engineer-2.png",
-        "../assets/images/experience/software-engineer-3.png"
-      ]
+      images: []
     },
     {
       id: "lab-coordinator",
@@ -50,8 +46,22 @@
         "Helped resolve operational issues through communication and coordination."
       ],
       images: [
-        "../assets/images/experience/lab-coordinator-1.jpg"
+        "../assets/images/experience/Laboratory Assistant Coordinator/ibes1.jpeg",
+        "../assets/images/experience/Laboratory Assistant Coordinator/ibes2.jpeg"
       ]
+    },
+     {
+      id: "maintenance-logistics",
+      title: "Senior Committee Coordinator – Maintenance & Logistics",
+      organization: "Basic Computing Laboratory",
+      type: "Organizational Experience",
+      period: "June 2024 – July 2025",
+      description:
+        "Coordinated maintenance and logistics activities to support laboratory operations.",
+      responsibilities: [
+        "Coordinated the Maintenance & Logistics team in managing laboratory facilities, equipment, and operational readiness." ,
+        "Managed logistical requirements and coordinated with team members to ensure smooth laboratory activities."],
+      images: ["../assets/images/experience/Senior Committee Coordinator – Maintenance & Logistics/mlc.jpeg"]
     },
     {
       id: "teaching-assistant",
@@ -66,18 +76,9 @@
         "Assisted with practical projects conducted over two to three weeks.",
         "Supported practical project presentations and related activities."
       ],
-      images: []
-    },
-    {
-      id: "maintenance-logistics",
-      title: "Senior Committee Coordinator – Maintenance & Logistics",
-      organization: "Basic Computing Laboratory",
-      type: "Organizational Experience",
-      period: "June 2024 – July 2025",
-      description:
-        "Coordinated maintenance and logistics activities to support laboratory operations.",
-      responsibilities: [],
-      images: []
+      images: [
+        "../assets/images/experience/Teaching Assistant/daskom.jpg"
+      ]
     }
   ];
 

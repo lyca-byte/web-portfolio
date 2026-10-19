@@ -1,8 +1,3 @@
-
-/* ========================================
-   PROJECTS PAGE
-   ======================================== */
-
 document.addEventListener("DOMContentLoaded", () => {
     const projectsList = document.getElementById("projects-list");
     const projectCount = document.getElementById("project-count");
@@ -16,10 +11,17 @@ document.addEventListener("DOMContentLoaded", () => {
      *
      * To add a project:
      * 1. Add a new object to this array.
-     * 2. Add preview images to assets/images/projects/.
-     * 3. Update the image paths in the object.
+     * 2. Set showPreview to true or false.
+     * 3. If showPreview is true, add preview images when available.
      *
-     * Use an empty images array if a project has no screenshots yet.
+     * showPreview: false
+     *   -> Do not display the preview section.
+     *
+     * showPreview: true with images: []
+     *   -> Display the empty preview message.
+     *
+     * showPreview: true with images
+     *   -> Display the image carousel.
      */
 
     const projects = [
@@ -29,6 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
             period: "2025",
             description:
                 "An offline posture-monitoring application developed as a capstone design project. The application uses camera input and pose estimation to support posture monitoring.",
+
             technologies: [
                 "Python",
                 "OpenCV",
@@ -37,16 +40,20 @@ document.addEventListener("DOMContentLoaded", () => {
                 "Pygame",
                 "PyQtGraph"
             ],
+
+            showPreview: true,
+
             images: [
                 {
-                    src: "../assets/images/projects/posrevice-1.jpg",
-                    alt: "POSREVICE application preview"
+                    src: "../assets/images/projects/POSREVICE/pop-up tutorial.png",
+                    alt: "POSREVICE pop-up preview"
                 },
                 {
-                    src: "../assets/images/projects/posrevice-2.jpg",
-                    alt: "POSREVICE posture monitoring preview"
+                    src: "../assets/images/projects/POSREVICE/main.png",
+                    alt: "POSREVICE posture application preview"
                 }
             ],
+
             links: [
                 {
                     label: "GitHub Repository",
@@ -60,6 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
             period: "2025",
             description:
                 "A time-series forecasting project using the Online Retail II dataset. Several forecasting approaches were evaluated, with Prophet achieving an MAE of 39,757, RMSE of 47,584, and MAPE of 16.75% in the reported evaluation.",
+
             technologies: [
                 "Python",
                 "Pandas",
@@ -67,16 +75,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 "Prophet",
                 "Data Visualization"
             ],
-            images: [
-                {
-                    src: "../assets/images/projects/demand-forecasting-1.png",
-                    alt: "Demand forecasting results"
-                },
-                {
-                    src: "../assets/images/projects/demand-forecasting-2.png",
-                    alt: "Demand forecasting visualization"
-                }
-            ],
+
+            showPreview: false,
+
+            images: [],
+
             links: [
                 {
                     label: "GitHub Repository",
@@ -90,6 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
             period: "2026",
             description:
                 "A no-code machine learning application developed as part of the IBM SkillsBuild University Education and Hacktiv8 program. It integrates a web interface with a machine learning backend to support model-related workflows.",
+
             technologies: [
                 "Python",
                 "FastAPI",
@@ -98,20 +102,19 @@ document.addEventListener("DOMContentLoaded", () => {
                 "REST API",
                 "Vercel"
             ],
-            images: [
-                {
-                    src: "../assets/images/projects/mlforge-1.png",
-                    alt: "MLForge application interface"
-                },
-                {
-                    src: "../assets/images/projects/mlforge-2.png",
-                    alt: "MLForge machine learning workflow"
-                }
-            ],
+
+            showPreview: false,
+
+            images: [],
+
             links: [
                 {
                     label: "GitHub Repository",
                     url: "https://github.com/lyca-byte/MLForge"
+                },
+                {
+                    label: "Live Demo",
+                    url: "https://ml-forge-eta.vercel.app/"
                 }
             ]
         },
@@ -121,6 +124,7 @@ document.addEventListener("DOMContentLoaded", () => {
             period: "2026",
             description:
                 "An image-based anomaly detection project focused on anomaly scoring, threshold-based decisions, localization, heatmap visualization, and evaluation metrics.",
+
             technologies: [
                 "Python",
                 "Computer Vision",
@@ -128,16 +132,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 "Image Processing",
                 "Hugging Face"
             ],
-            images: [
-                {
-                    src: "../assets/images/projects/mvtec-ad-1.png",
-                    alt: "MVTec-AD anomaly detection result"
-                },
-                {
-                    src: "../assets/images/projects/mvtec-ad-2.png",
-                    alt: "MVTec-AD anomaly heatmap visualization"
-                }
-            ],
+
+            showPreview: true,
+
+            images: [],
+
             links: [
                 {
                     label: "GitHub Repository",
@@ -151,6 +150,7 @@ document.addEventListener("DOMContentLoaded", () => {
             period: "2026",
             description:
                 "A business data analysis and revenue prediction platform developed as part of the IBM SkillsBuild University Education and Hacktiv8 program. It combines business analysis features with a linear regression model for revenue prediction.",
+
             technologies: [
                 "Python",
                 "Pandas",
@@ -159,16 +159,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 "AI Agent",
                 "Vercel"
             ],
-            images: [
-                {
-                    src: "../assets/images/projects/business-analysis-1.png",
-                    alt: "Business analysis platform interface"
-                },
-                {
-                    src: "../assets/images/projects/business-analysis-2.png",
-                    alt: "Revenue prediction platform result"
-                }
-            ],
+
+            showPreview: false,
+
+            images: [],
+
             links: [
                 {
                     label: "GitHub Repository",
@@ -182,10 +177,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     ];
 
-    /* ========================================
-       HELPERS
-       ======================================== */
-
+    // HELPERS
     function createElement(tag, className, text) {
         const element = document.createElement(tag);
 
@@ -213,167 +205,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    /* ========================================
-       PROJECT CAROUSEL
-       ======================================== */
-
-    // function createCarousel(images, projectTitle) {
-    //     const carousel = createElement("div", "image-carousel");
-
-    //     carousel.setAttribute("role", "region");
-    //     carousel.setAttribute("aria-label", `${projectTitle} screenshots`);
-
-    //     const heading = createElement("div", "carousel-heading");
-    //     heading.appendChild(
-    //         createElement("span", "", "PROJECT PREVIEW")
-    //     );
-
-    //     const counter = createElement("span", "carousel-counter", "");
-    //     counter.setAttribute("aria-live", "polite");
-    //     heading.appendChild(counter);
-
-    //     const viewport = createElement("div", "carousel-viewport");
-    //     const image = createElement("img", "preview-image");
-
-    //     image.alt = `${projectTitle} preview`;
-    //     image.loading = "lazy";
-    //     image.decoding = "async";
-
-    //     viewport.appendChild(image);
-
-    //     const controls = createElement("div", "carousel-controls");
-
-    //     const previousButton = createElement(
-    //         "button",
-    //         "carousel-button",
-    //         "←"
-    //     );
-
-    //     previousButton.type = "button";
-    //     previousButton.setAttribute(
-    //         "aria-label",
-    //         `Previous ${projectTitle} screenshot`
-    //     );
-
-    //     const nextButton = createElement(
-    //         "button",
-    //         "carousel-button",
-    //         "→"
-    //     );
-
-    //     nextButton.type = "button";
-    //     nextButton.setAttribute(
-    //         "aria-label",
-    //         `Next ${projectTitle} screenshot`
-    //     );
-
-    //     controls.append(previousButton, nextButton);
-
-    //     const hint = createElement(
-    //         "p",
-    //         "carousel-hint",
-    //         "Use the buttons to browse project screenshots."
-    //     );
-
-    //     carousel.append(heading, viewport, controls, hint);
-
-    //     /*
-    //      * If the project has no screenshots, show a message
-    //      * instead of broken image controls.
-    //      */
-    //     if (!Array.isArray(images) || images.length === 0) {
-    //         viewport.replaceChildren(
-    //             createElement(
-    //                 "p",
-    //                 "project-empty",
-    //                 "No project preview images available yet."
-    //             )
-    //         );
-
-    //         controls.hidden = true;
-    //         hint.hidden = true;
-    //         counter.textContent = "0 images";
-
-    //         return carousel;
-    //     }
-
-    //     let currentIndex = 0;
-
-    //     function showImage(index) {
-    //         currentIndex = (index + images.length) % images.length;
-
-    //         const currentImage = images[currentIndex];
-
-    //         image.onerror = () => {
-    //             image.onerror = null;
-    //             image.removeAttribute("src");
-    //             image.alt = "Preview image could not be loaded.";
-
-    //             viewport.replaceChildren(
-    //                 createElement(
-    //                     "p",
-    //                     "project-empty",
-    //                     `Preview unavailable: ${currentImage.src}`
-    //                 )
-    //             );
-    //         };
-
-    //         image.src = currentImage.src;
-    //         image.alt = currentImage.alt || `${projectTitle} preview`;
-
-    //         counter.textContent =
-    //             `${currentIndex + 1} / ${images.length}`;
-
-    //         /*
-    //          * Hide navigation when there is only one image.
-    //          */
-    //         const hasMultipleImages = images.length > 1;
-
-    //         previousButton.hidden = !hasMultipleImages;
-    //         nextButton.hidden = !hasMultipleImages;
-    //         hint.hidden = !hasMultipleImages;
-
-    //         /*
-    //          * Reset the viewport in case a previous image failed.
-    //          */
-    //         if (image.parentElement !== viewport) {
-    //             viewport.replaceChildren(image);
-    //         }
-    //     }
-
-    //     previousButton.addEventListener("click", () => {
-    //         showImage(currentIndex - 1);
-    //     });
-
-    //     nextButton.addEventListener("click", () => {
-    //         showImage(currentIndex + 1);
-    //     });
-
-    //     /*
-    //      * Optional keyboard navigation while the carousel
-    //      * or its controls are focused.
-    //      */
-    //     carousel.addEventListener("keydown", (event) => {
-    //         if (event.key === "ArrowLeft") {
-    //             event.preventDefault();
-    //             showImage(currentIndex - 1);
-    //         } else if (event.key === "ArrowRight") {
-    //             event.preventDefault();
-    //             showImage(currentIndex + 1);
-    //         }
-    //     });
-
-    //     showImage(0);
-
-    //     return carousel;
-    // }
-
-
-/* ========================================
-   PROJECT CAROUSEL
-   Shared carousel classes and swipe behavior
-   ======================================== */
-
+    // PROJECT CAROUSEL
     function createCarousel(images, projectTitle) {
         const carousel = createElement("div", "image-carousel");
 
@@ -381,12 +213,14 @@ document.addEventListener("DOMContentLoaded", () => {
         carousel.setAttribute("aria-label", `${projectTitle} screenshots`);
 
         const heading = createElement("div", "carousel-heading");
+
         heading.appendChild(
             createElement("span", "", "PROJECT PREVIEW")
         );
 
         const counter = createElement("span", "carousel-counter", "");
         counter.setAttribute("aria-live", "polite");
+
         heading.appendChild(counter);
 
         const viewport = createElement("div", "carousel-viewport");
@@ -416,6 +250,7 @@ document.addEventListener("DOMContentLoaded", () => {
         );
 
         previousButton.type = "button";
+
         previousButton.setAttribute(
             "aria-label",
             `Previous ${projectTitle} screenshot`
@@ -428,6 +263,7 @@ document.addEventListener("DOMContentLoaded", () => {
         );
 
         nextButton.type = "button";
+
         nextButton.setAttribute(
             "aria-label",
             `Next ${projectTitle} screenshot`
@@ -444,8 +280,9 @@ document.addEventListener("DOMContentLoaded", () => {
         carousel.append(heading, viewport, controls, hint);
 
         /*
-        * Handle projects without preview images.
-        */
+         * If preview is enabled but no images are available,
+         * show the empty preview message.
+         */
         if (!Array.isArray(images) || images.length === 0) {
             viewport.replaceChildren(
                 createElement(
@@ -465,9 +302,9 @@ document.addEventListener("DOMContentLoaded", () => {
         let currentIndex = 0;
 
         /*
-        * Display an image by index.
-        * Navigation wraps around at both ends.
-        */
+         * Display an image by index.
+         * Navigation wraps around at both ends.
+         */
         function showImage(index) {
             currentIndex = (index + images.length) % images.length;
 
@@ -508,8 +345,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         /*
-        * Previous and Next buttons.
-        */
+         * Previous and Next buttons.
+         */
         previousButton.addEventListener("click", () => {
             showImage(currentIndex - 1);
         });
@@ -519,8 +356,8 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         /*
-        * Keyboard navigation.
-        */
+         * Keyboard navigation.
+         */
         viewport.addEventListener("keydown", (event) => {
             if (event.key === "ArrowLeft") {
                 event.preventDefault();
@@ -532,12 +369,8 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         /*
-        * Touch swipe support for mobile devices.
-        * This follows the same behavior as Experience:
-        * - Swipe left  -> next image
-        * - Swipe right -> previous image
-        * - Vertical scrolling remains available
-        */
+         * Touch swipe support for mobile devices.
+         */
         let touchStartX = 0;
         let touchStartY = 0;
 
@@ -575,10 +408,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 touchStartY = 0;
 
                 /*
-                * Ignore short movements and vertical gestures.
-                * This prevents ordinary page scrolling from
-                * accidentally changing the preview image.
-                */
+                 * Ignore short movements and vertical gestures.
+                 * This prevents ordinary page scrolling from
+                 * accidentally changing the preview image.
+                 */
                 if (
                     Math.abs(deltaX) < 45 ||
                     Math.abs(deltaX) <= Math.abs(deltaY)
@@ -598,8 +431,8 @@ document.addEventListener("DOMContentLoaded", () => {
         );
 
         /*
-        * Reset the gesture if the touch is interrupted.
-        */
+         * Reset the gesture if the touch is interrupted.
+         */
         viewport.addEventListener(
             "touchcancel",
             () => {
@@ -610,18 +443,14 @@ document.addEventListener("DOMContentLoaded", () => {
         );
 
         /*
-        * Initialize the first image.
-        */
+         * Initialize the first image.
+         */
         showImage(0);
 
         return carousel;
     }
 
-
-    /* ========================================
-       PROJECT CARD
-       ======================================== */
-
+    // PROJECT CARD
     function createProjectCard(project) {
         const card = createElement("article", "content-card project-card");
 
@@ -649,8 +478,6 @@ document.addEventListener("DOMContentLoaded", () => {
             "project-description",
             project.description
         );
-
-        const carousel = createCarousel(project.images, project.title);
 
         const technologyHeading = createElement(
             "h3",
@@ -688,8 +515,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
         card.append(
             header,
-            description,
-            carousel,
+            description
+        );
+
+        /*
+         * Only create the preview section when showPreview is true.
+         * Default to true to preserve existing project behavior
+         * when the flag has not been specified.
+         */
+        if (project.showPreview !== false) {
+            card.appendChild(
+                createCarousel(project.images, project.title)
+            );
+        }
+
+        card.append(
             technologyHeading,
             technologyList
         );
@@ -701,10 +541,8 @@ document.addEventListener("DOMContentLoaded", () => {
         return card;
     }
 
-    /* ========================================
-       RENDER PROJECTS
-       ======================================== */
 
+    // RENDER PROJECTS
     function renderProjects() {
         projectsList.replaceChildren();
 

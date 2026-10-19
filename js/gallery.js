@@ -71,11 +71,11 @@ const artworks = [
         title:'sunset.',
         category:'Digital Drawing',
         year:"2024",
-        description:"ora tau iki sunset pokok e",
+        description:"",
         tools:"ibisPaint X",
         image:"../assets/images/gallery/sunset.png",
         processVideo: "../assets/video/gallery/sunset.mp4",
-        processDescription:"iki proses gambar ne",
+        processDescription:"",
         tags:["Digital Art", "Personal Work"],
         externalLink:""
     }
